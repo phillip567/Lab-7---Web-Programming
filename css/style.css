@@ -1,0 +1,182 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-image: url(../images/green_tea.jpg);
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 30px;
+}
+
+/* Container with flexbox layout */
+.container {
+    display: flex;
+    height: calc(100vh - 60px); /* Full viewport height minus header */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #77a076;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.sidebar ul li a:hover{
+    background-color: rgba(255, 255, 255, 0.288);
+}
+
+
+/* Section styles */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #3e8e41;
+}
+
+/* Images */
+img {
+    width: 30%;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+/* Layout for Benefits */
+.benefits {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.benefit {
+    width: 30%;
+    background-color: #cbd8c9;
+    padding: 10px;
+    box-shadow: 0 2px 5px black;
+    text-align: center;
+}
+
+.benefit h3 {
+    margin-top: 0;
+}
+
+.benefit-image {
+    width: 50px; /* Set a fixed size for the icons */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    margin: 30px;
+}
+
+
+.brewing-tips ul li{
+    margin-top: 10px;
+    list-style-position: inside;
+
+}
+
+/* Responsive styles */
+
+/* Tablet view */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .benefit {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar{
+        width: 100%;
+    }
+
+    .sidebar ul li{
+        display: inline-block;
+        margin: 15px;
+        background-color: rgba(29, 113, 67, 0.466);
+    }
+}
+
+/* Mobile view */
+@media screen and (min-width: 0px) and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header {
+        background-image: none;
+        background-color: green;
+    }
+
+    .sidebar{
+        background-color: rgb(40, 96, 57);
+        width: 100%;
+        height: min-content;
+        padding: 0px;
+    }
+
+    .sidebar nav ul li:hover{
+        background-color: rgba(255, 255, 255, 0.82);
+    }
+    
+    .benefit {
+        width: 100%;
+    }
+
+
+    footer p {
+        font-size: 14px;
+    }
+
+    img {
+        display: none; /* Hide the header image on mobile */
+    }
+}
